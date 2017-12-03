@@ -26,8 +26,13 @@ class ViewController: UIViewController {
     //----------defenseur-----------------
  
     @IBOutlet weak var defenseur: UIImageView!
-    var originaldefX: CGFloat!
-    var originaldefY: CGFloat!
+    var originalDefenseurGaucheX: CGFloat!
+    var originalDefenseurGaucheY: CGFloat!
+    @IBOutlet weak var defenseur2: UIImageView!
+    var originalDefenseurDroiteX: CGFloat!
+    var originalDefenseurDroiteY: CGFloat!
+    
+    
     var cosdef: Double!
     var sindef: Double!
     var tempsDeDeplacement: Double!
@@ -139,6 +144,7 @@ class ViewController: UIViewController {
     }
     
     func defenseAnimation(){
+        //-------defenseur1------------
         if defenseur.center.x < UIScreen.main.bounds.width {
         defenseur.center.x += 1
         defenseur.center.y += 0
@@ -147,14 +153,29 @@ class ViewController: UIViewController {
             defenseur.center.x = -1
             defenseur.center.y = UIScreen.main.bounds.height / 3
         }
+        //-------defenseur2------------
+        if defenseur2.center.x < UIScreen.main.bounds.width  {
+            defenseur2.center.x -= 1
+            defenseur2.center.y += 0
+        }else {
+            
+            defenseur2.center.x = 500
+            defenseur2.center.y = UIScreen.main.bounds.height / 4
+        }
+        
         
     }
     func placerDefenseur(){
-        defenseur.center.x = UIScreen.main.bounds.width / 2
+        //-------defenseur1------------
+        defenseur.center.x = UIScreen.main.bounds.width - 1
         defenseur.center.y = UIScreen.main.bounds.height / 3
-
-        originaldefX = viseur.center.x
-        originaldefY = viseur.center.y
+        originalDefenseurGaucheX = viseur.center.x
+        originalDefenseurGaucheY = viseur.center.y
+        //-------defenseur2------------
+        defenseur2.center.x = UIScreen.main.bounds.width - 1
+        defenseur2.center.y = UIScreen.main.bounds.height / 4
+        originalDefenseurDroiteX = viseur.center.x
+        originalDefenseurDroiteY = viseur.center.y
         
     }
     

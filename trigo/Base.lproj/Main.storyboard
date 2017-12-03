@@ -30,7 +30,7 @@
                                 </constraints>
                             </imageView>
                             <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aB4-Zc-caE">
-                                <rect key="frame" x="461" y="28" width="25" height="25"/>
+                                <rect key="frame" x="385" y="106" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -54,28 +54,32 @@
                                 </connections>
                             </slider>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SB2-rT-hSJ">
-                                <rect key="frame" x="596" y="823" width="15" height="15"/>
+                                <rect key="frame" x="221" y="28" width="15" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6jz-1u-4vj">
-                                <rect key="frame" x="508" y="797" width="15" height="15"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ecb-gn-Tng">
-                                <rect key="frame" x="550" y="846" width="15" height="15"/>
+                                <rect key="frame" x="258" y="28" width="15" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hockey.png" translatesAutoresizingMaskIntoConstraints="NO" id="LNf-oo-KWR">
-                                <rect key="frame" x="596" y="896" width="100" height="100"/>
+                                <rect key="frame" x="511" y="68" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cage.png" translatesAutoresizingMaskIntoConstraints="NO" id="WOZ-zg-1dk">
                                 <rect key="frame" x="342" y="0.0" width="111" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hockey2.png" translatesAutoresizingMaskIntoConstraints="NO" id="R3d-Zq-Nbt">
+                                <rect key="frame" x="80" y="68" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ecb-gn-Tng">
+                                <rect key="frame" x="182" y="28" width="15" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -88,6 +92,7 @@
                     <connections>
                         <outlet property="balle" destination="aB4-Zc-caE" id="TRu-c2-mxR"/>
                         <outlet property="defenseur" destination="LNf-oo-KWR" id="FgQ-Er-EEz"/>
+                        <outlet property="defenseur2" destination="R3d-Zq-Nbt" id="aWN-KK-qJ2"/>
                         <outlet property="tirer" destination="Ney-jb-qC0" id="ei0-3Y-nrq"/>
                         <outlet property="viseur" destination="SB2-rT-hSJ" id="41c-P2-2eG"/>
                         <outlet property="viseur2" destination="6jz-1u-4vj" id="nDZ-7i-Hc6"/>
@@ -103,5 +108,6 @@
         <image name="cage.png" width="49" height="15"/>
         <image name="circle.png" width="552" height="486"/>
         <image name="hockey.png" width="512" height="512"/>
+        <image name="hockey2.png" width="512" height="512"/>
     </resources>
 </document>

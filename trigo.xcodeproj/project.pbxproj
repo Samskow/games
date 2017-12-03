@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7E4322361FD3D4AA00B101CE /* hockey.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E4322351FD3D4A900B101CE /* hockey.png */; };
 		7E4322381FD3D83600B101CE /* cage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E4322371FD3D83500B101CE /* cage.png */; };
+		7E43223A1FD3DD4800B101CE /* hockey2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E4322391FD3DD4800B101CE /* hockey2.png */; };
 		9B5726771FBA3EF100EF2439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5726761FBA3EF100EF2439 /* AppDelegate.swift */; };
 		9B5726791FBA3EF100EF2439 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5726781FBA3EF100EF2439 /* ViewController.swift */; };
 		9B57267C1FBA3EF100EF2439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B57267A1FBA3EF100EF2439 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		7E4322351FD3D4A900B101CE /* hockey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hockey.png; path = images/hockey.png; sourceTree = "<group>"; };
 		7E4322371FD3D83500B101CE /* cage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cage.png; path = images/cage.png; sourceTree = "<group>"; };
+		7E4322391FD3DD4800B101CE /* hockey2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hockey2.png; path = images/hockey2.png; sourceTree = "<group>"; };
 		9B5726731FBA3EF100EF2439 /* trigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5726761FBA3EF100EF2439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B5726781FBA3EF100EF2439 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		9B5726881FBA3F4200EF2439 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7E4322391FD3DD4800B101CE /* hockey2.png */,
 				7E4322371FD3D83500B101CE /* cage.png */,
 				7E4322351FD3D4A900B101CE /* hockey.png */,
 				9B5726891FBA3F4E00EF2439 /* circle.png */,
@@ -144,6 +147,7 @@
 				9B57267E1FBA3EF100EF2439 /* Assets.xcassets in Resources */,
 				9B57267C1FBA3EF100EF2439 /* Main.storyboard in Resources */,
 				9B57268A1FBA3F4E00EF2439 /* circle.png in Resources */,
+				7E43223A1FD3DD4800B101CE /* hockey2.png in Resources */,
 				7E4322361FD3D4AA00B101CE /* hockey.png in Resources */,
 				7E4322381FD3D83600B101CE /* cage.png in Resources */,
 			);
