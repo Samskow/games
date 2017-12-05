@@ -12,6 +12,9 @@
 		7E43223A1FD3DD4800B101CE /* hockey2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E4322391FD3DD4800B101CE /* hockey2.png */; };
 		7E43223C1FD3EBC600B101CE /* cercle.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E43223B1FD3EBC600B101CE /* cercle.png */; };
 		7E43223E1FD3F07200B101CE /* toit.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E43223D1FD3F07100B101CE /* toit.png */; };
+		7ECF1C3C1FD6FD1B005837B0 /* hockeyPlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECF1C3B1FD6FD1B005837B0 /* hockeyPlayer.png */; };
+		7ECF1C3E1FD702FC005837B0 /* shopbg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7ECF1C3D1FD702FB005837B0 /* shopbg.jpeg */; };
+		7ECF1C401FD70439005837B0 /* buzzer.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECF1C3F1FD70438005837B0 /* buzzer.png */; };
 		9B5726771FBA3EF100EF2439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5726761FBA3EF100EF2439 /* AppDelegate.swift */; };
 		9B5726791FBA3EF100EF2439 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5726781FBA3EF100EF2439 /* ViewController.swift */; };
 		9B57267C1FBA3EF100EF2439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B57267A1FBA3EF100EF2439 /* Main.storyboard */; };
@@ -26,6 +29,9 @@
 		7E4322391FD3DD4800B101CE /* hockey2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hockey2.png; path = images/hockey2.png; sourceTree = "<group>"; };
 		7E43223B1FD3EBC600B101CE /* cercle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cercle.png; path = images/cercle.png; sourceTree = "<group>"; };
 		7E43223D1FD3F07100B101CE /* toit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = toit.png; path = images/toit.png; sourceTree = "<group>"; };
+		7ECF1C3B1FD6FD1B005837B0 /* hockeyPlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hockeyPlayer.png; path = images/hockeyPlayer.png; sourceTree = "<group>"; };
+		7ECF1C3D1FD702FB005837B0 /* shopbg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = shopbg.jpeg; path = images/shopbg.jpeg; sourceTree = "<group>"; };
+		7ECF1C3F1FD70438005837B0 /* buzzer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buzzer.png; path = images/buzzer.png; sourceTree = "<group>"; };
 		9B5726731FBA3EF100EF2439 /* trigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5726761FBA3EF100EF2439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B5726781FBA3EF100EF2439 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +86,9 @@
 		9B5726881FBA3F4200EF2439 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7ECF1C3F1FD70438005837B0 /* buzzer.png */,
+				7ECF1C3D1FD702FB005837B0 /* shopbg.jpeg */,
+				7ECF1C3B1FD6FD1B005837B0 /* hockeyPlayer.png */,
 				7E43223D1FD3F07100B101CE /* toit.png */,
 				7E43223B1FD3EBC600B101CE /* cercle.png */,
 				7E4322391FD3DD4800B101CE /* hockey2.png */,
@@ -151,13 +160,16 @@
 			files = (
 				9B5726811FBA3EF100EF2439 /* LaunchScreen.storyboard in Resources */,
 				9B57267E1FBA3EF100EF2439 /* Assets.xcassets in Resources */,
+				7ECF1C3E1FD702FC005837B0 /* shopbg.jpeg in Resources */,
 				7E43223E1FD3F07200B101CE /* toit.png in Resources */,
+				7ECF1C3C1FD6FD1B005837B0 /* hockeyPlayer.png in Resources */,
 				9B57267C1FBA3EF100EF2439 /* Main.storyboard in Resources */,
 				7E43223C1FD3EBC600B101CE /* cercle.png in Resources */,
 				9B57268A1FBA3F4E00EF2439 /* circle.png in Resources */,
 				7E43223A1FD3DD4800B101CE /* hockey2.png in Resources */,
 				7E4322361FD3D4AA00B101CE /* hockey.png in Resources */,
 				7E4322381FD3D83600B101CE /* cage.png in Resources */,
+				7ECF1C401FD70439005837B0 /* buzzer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

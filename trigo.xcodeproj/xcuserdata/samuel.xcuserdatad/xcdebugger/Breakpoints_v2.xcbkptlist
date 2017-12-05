@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "trigo/ViewController.swift"
-            timestampString = "533983425.945338"
+            timestampString = "534185679.734161"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "animateBall(_:)"
             landmarkType = "7">
          </BreakpointContent>
