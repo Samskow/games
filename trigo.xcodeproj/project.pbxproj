@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		7E0171A81FD9A8E50053F8FE /* fireball.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7E0171A71FD9A8E40053F8FE /* fireball.gif */; };
 		7E0171AA1FD9ABFA0053F8FE /* swift+gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0171A91FD9ABFA0053F8FE /* swift+gif.swift */; };
+		7E0171AC1FD9C21C0053F8FE /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0171AB1FD9C21B0053F8FE /* lock.png */; };
+		7E0171AE1FD9C35D0053F8FE /* unlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E0171AD1FD9C35D0053F8FE /* unlock.png */; };
 		7E4322361FD3D4AA00B101CE /* hockey.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E4322351FD3D4A900B101CE /* hockey.png */; };
 		7E4322381FD3D83600B101CE /* cage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E4322371FD3D83500B101CE /* cage.png */; };
 		7E43223A1FD3DD4800B101CE /* hockey2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E4322391FD3DD4800B101CE /* hockey2.png */; };
 		7E43223C1FD3EBC600B101CE /* cercle.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E43223B1FD3EBC600B101CE /* cercle.png */; };
 		7E43223E1FD3F07200B101CE /* toit.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E43223D1FD3F07100B101CE /* toit.png */; };
 		7EB663541FD88B57000F6CCE /* gardien.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EB663531FD88B56000F6CCE /* gardien.png */; };
+		7EB896E11FDB36DE00224000 /* Bounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB896E01FDB36DE00224000 /* Bounce.swift */; };
 		7ECF1C3C1FD6FD1B005837B0 /* hockeyPlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECF1C3B1FD6FD1B005837B0 /* hockeyPlayer.png */; };
 		7ECF1C3E1FD702FC005837B0 /* shopbg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7ECF1C3D1FD702FB005837B0 /* shopbg.jpeg */; };
 		7ECF1C401FD70439005837B0 /* buzzer.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ECF1C3F1FD70438005837B0 /* buzzer.png */; };
@@ -29,12 +32,15 @@
 /* Begin PBXFileReference section */
 		7E0171A71FD9A8E40053F8FE /* fireball.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = fireball.gif; path = images/fireball.gif; sourceTree = "<group>"; };
 		7E0171A91FD9ABFA0053F8FE /* swift+gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "swift+gif.swift"; sourceTree = "<group>"; };
+		7E0171AB1FD9C21B0053F8FE /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lock.png; path = images/lock.png; sourceTree = "<group>"; };
+		7E0171AD1FD9C35D0053F8FE /* unlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unlock.png; path = images/unlock.png; sourceTree = "<group>"; };
 		7E4322351FD3D4A900B101CE /* hockey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hockey.png; path = images/hockey.png; sourceTree = "<group>"; };
 		7E4322371FD3D83500B101CE /* cage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cage.png; path = images/cage.png; sourceTree = "<group>"; };
 		7E4322391FD3DD4800B101CE /* hockey2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hockey2.png; path = images/hockey2.png; sourceTree = "<group>"; };
 		7E43223B1FD3EBC600B101CE /* cercle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cercle.png; path = images/cercle.png; sourceTree = "<group>"; };
 		7E43223D1FD3F07100B101CE /* toit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = toit.png; path = images/toit.png; sourceTree = "<group>"; };
 		7EB663531FD88B56000F6CCE /* gardien.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gardien.png; path = images/gardien.png; sourceTree = "<group>"; };
+		7EB896E01FDB36DE00224000 /* Bounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bounce.swift; sourceTree = "<group>"; };
 		7ECF1C3B1FD6FD1B005837B0 /* hockeyPlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hockeyPlayer.png; path = images/hockeyPlayer.png; sourceTree = "<group>"; };
 		7ECF1C3D1FD702FB005837B0 /* shopbg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = shopbg.jpeg; path = images/shopbg.jpeg; sourceTree = "<group>"; };
 		7ECF1C3F1FD70438005837B0 /* buzzer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = buzzer.png; path = images/buzzer.png; sourceTree = "<group>"; };
@@ -79,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				9B5726881FBA3F4200EF2439 /* images */,
+				7EB896E01FDB36DE00224000 /* Bounce.swift */,
 				9B5726761FBA3EF100EF2439 /* AppDelegate.swift */,
 				9B5726781FBA3EF100EF2439 /* ViewController.swift */,
 				7E0171A91FD9ABFA0053F8FE /* swift+gif.swift */,
@@ -93,6 +100,8 @@
 		9B5726881FBA3F4200EF2439 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7E0171AD1FD9C35D0053F8FE /* unlock.png */,
+				7E0171AB1FD9C21B0053F8FE /* lock.png */,
 				7E0171A71FD9A8E40053F8FE /* fireball.gif */,
 				7EB663531FD88B56000F6CCE /* gardien.png */,
 				7ECF1C3F1FD70438005837B0 /* buzzer.png */,
@@ -176,8 +185,10 @@
 				9B57267C1FBA3EF100EF2439 /* Main.storyboard in Resources */,
 				7E0171A81FD9A8E50053F8FE /* fireball.gif in Resources */,
 				7E43223C1FD3EBC600B101CE /* cercle.png in Resources */,
+				7E0171AE1FD9C35D0053F8FE /* unlock.png in Resources */,
 				9B57268A1FBA3F4E00EF2439 /* circle.png in Resources */,
 				7E43223A1FD3DD4800B101CE /* hockey2.png in Resources */,
+				7E0171AC1FD9C21C0053F8FE /* lock.png in Resources */,
 				7E4322361FD3D4AA00B101CE /* hockey.png in Resources */,
 				7E4322381FD3D83600B101CE /* cage.png in Resources */,
 				7ECF1C401FD70439005837B0 /* buzzer.png in Resources */,
@@ -194,6 +205,7 @@
 				9B5726791FBA3EF100EF2439 /* ViewController.swift in Sources */,
 				7E0171AA1FD9ABFA0053F8FE /* swift+gif.swift in Sources */,
 				9B5726771FBA3EF100EF2439 /* AppDelegate.swift in Sources */,
+				7EB896E11FDB36DE00224000 /* Bounce.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

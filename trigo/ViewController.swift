@@ -77,10 +77,18 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var distance = 0
     @IBOutlet weak var scoreLabel: UILabel!
     var score = 0
+    var object_bounce: Bounce!
     
-    
+    @IBOutlet weak var mur_gauche: UIView!
+    @IBOutlet weak var mur_haut: UIView!
+    @IBOutlet weak var mur_droite: UIView!
+    @IBOutlet weak var mur_bas: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        goalarret()
+        //------OBJECT---------
+        object_bounce = Bounce(ball: balle, left_window: mur_gauche, right_window: mur_droite, top_window: mur_haut, bottom_window: mur_bas)
+        //---------------------
         balleDeFeu.loadGif(name: "fireball")
         tirer.isEnabled = false
         tirer.alpha = 0.5
@@ -109,20 +117,30 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         // Dispose of any resources that can be recreated.
     }
     
+    func goalarret(){
+    UIView.animate(withDuration: 1, animations: {
     
+        self.gardien.frame.size.width += 10
+        self.gardien.frame.size.height += 10
+    }) { _ in
+    UIView.animate(withDuration: 1, delay: 0.25, options: [.autoreverse, .repeat], animations: {
+        self.gardien.frame.origin.x -= 30
+    })
+    }
+    }
     
     
     @IBAction func animateBall(_ sender: UIButton) {
         
         placerBall()
-        aTimer = Timer.scheduledTimer(timeInterval: 0.005, target: self, selector: #selector(doAnimation), userInfo: nil, repeats: true)
+        aTimer = Timer.scheduledTimer(timeInterval: 0.0025, target: self, selector: #selector(doAnimation), userInfo: nil, repeats: true)
         
         
     }
     @IBAction func rebond(_ sender: UIButton) {
         
         placerBall()
-        aTimer = Timer.scheduledTimer(timeInterval: 0.005, target: self, selector: #selector(doRebond), userInfo: nil, repeats: true)
+        aTimer = Timer.scheduledTimer(timeInterval: 0.009, target: self, selector: #selector(doRebond), userInfo: nil, repeats: true)
         
         
     }
@@ -138,7 +156,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         balle.center.x += CGFloat(cosv)
         balle.center.y += CGFloat(sinv)
         
-        if distance >= 600 {
+        sinv = object_bounce.returnCosSinAfterTouch(sin: sinv, cos: cosv)[0]
+        cosv = object_bounce.returnCosSinAfterTouch(sin: sinv, cos: cosv)[1]
+        
+        
+        if distance >= 1000 {
             aTimer.invalidate()
             aTimer = nil
             placerBall()
@@ -164,7 +186,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         if balle.frame.intersects(cage.frame){ // ----SCORE++------------
             score += 100
-            scoreLabel.text = "Score :" + String(score)
+            scoreLabel.text = "Score : \(score)"
             print("GOAL!!!!")
             goal.isHidden = false
             aTimer.invalidate()
@@ -188,8 +210,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     //------------REBOND------------
     func doRebond(){
         print("rebonddd")
-            balle.center.x += 20
-            balle.center.y += 20
+        balle.center.x += 20
+        balle.center.y += 20
         tirer.isEnabled = true
         tirer.alpha = 1
         slider.isEnabled = true
