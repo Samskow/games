@@ -13,6 +13,8 @@ class Bounce {
     var bw: UIView!
     var def3 : UIView!
     var def : UIView!
+    var PoteauGauche : UIView!
+    var PoteauDroit: UIView!
     //--------------------------------------------------
     init(ball b: UIImageView!,
          left_window lw: UIView,
@@ -20,7 +22,9 @@ class Bounce {
          top_window tw: UIView,
          bottom_window bw: UIView,
          defenseur3 def3 : UIView,
-         defenseur def : UIView) {
+         defenseur def : UIView,
+         PoteauGauche: UIView,
+         PoteauDroit: UIView) {
         self.b = b
         self.lw = lw
         self.rw = rw
@@ -28,6 +32,8 @@ class Bounce {
         self.bw = bw
         self.def3 = def3
         self.def = def
+        self.PoteauGauche = PoteauGauche
+        self.PoteauDroit = PoteauDroit
     }
     //--------------------------------------------------
     func returnCosSinAfterTouch(sin s: Double, cos c: Double) -> [Double] {
@@ -47,6 +53,19 @@ class Bounce {
         if b.frame.intersects(def.frame) {
             let u = abs(d)
             d = u }
+        
+        //---POTEAU--------
+        if b.frame.intersects(PoteauGauche.frame) {
+            let p1 = abs(d)
+            d = p1 }
+        
+        if b.frame.intersects(PoteauDroit.frame) {
+            let p2 = abs(d)
+            d = p2 }
+        
+        
+        
+        
         return [__sinpi(Double(d/180.0)), __cospi(Double(d/180.0))]
     }
     //--------------------------------------------------

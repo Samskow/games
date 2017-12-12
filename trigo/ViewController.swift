@@ -45,7 +45,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     //-------TABLEAU---------
     @IBOutlet weak var boutique: UITableView!
     
-    //-----------------------
+    //----------POTEAU DROIT--------------
+    @IBOutlet weak var PoteauDroit: UIView!
+    
+    //----------POTEAU GAUCHE-------------
+    @IBOutlet weak var PoteauGauche: UIView!
     
     @IBOutlet weak var cage: UIImageView!
     
@@ -94,7 +98,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         super.viewDidLoad()
         goalarret()
         //------OBJECT---------
-        object_bounce = Bounce(ball: balle, left_window: mur_gauche, right_window: mur_droite, top_window: mur_haut, bottom_window: mur_bas,defenseur3 : defenseur3, defenseur: defenseur)
+        object_bounce = Bounce(ball: balle, left_window: mur_gauche, right_window: mur_droite, top_window: mur_haut, bottom_window: mur_bas,defenseur3 : defenseur3, defenseur: defenseur,PoteauGauche: PoteauGauche,
+                               PoteauDroit: PoteauDroit)
         //---------------------
         balleDeFeu.loadGif(name: "fireball")
         //balle.loadGif(name: "fireball")
