@@ -32,6 +32,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet weak var light1: UIImageView!
     @IBOutlet weak var light2: UIImageView!
     
+    //--------BOUTON DE CHOIX D'ITEM ----------
+    
+    @IBOutlet weak var boutonChoix1: UIButton!
+    
+    @IBOutlet weak var boutonChoix2: UIButton!
+    
+    @IBOutlet weak var boutonChoix3: UIButton!
+    
+    @IBOutlet weak var boutonChoix4: UIButton!
     
     //-----CADENAS--------
     //---item1---
@@ -229,6 +238,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             if score >= 100{
                 locketat4.image = UIImage(named: "unlock")
                 toronto.alpha = 1.0
+            
             }
             if score >= 300{
                 locketat3.image = UIImage(named: "unlock")
@@ -396,7 +406,39 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
     }
     
+    //===========================================================
+    //================= CHOIX ITEM ==============================
+
+    @IBAction func choix1Action(_ sender: UIButton) {
+        if score >= 700 {
+            balle.image = UIImage(named: "fireball")
+        }
+    }
     
+    @IBAction func choix2Action(_ sender: UIButton) {
+        if score >= 500 {
+            balle.image = UIImage(named: "oilersPuck")
+        }
+    }
+    
+    @IBAction func choix3Action(_ sender: UIButton) {
+        if score >= 300 {
+            balle.image = UIImage(named: "canadianPuck")
+        }
+    }
+    
+    @IBAction func choix4Action(_ sender: UIButton) {
+        if score >= 100 {
+            balle.image = UIImage(named: "torontomaplePuck")
+        }
+    }
+    
+    
+    
+    
+    
+    //===========================================================
+    //===========================================================
     
     //------------------RESET DES ITEMS--------------------------
     

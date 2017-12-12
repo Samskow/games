@@ -146,6 +146,34 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sam-tL-RtC">
+                                                <rect key="frame" x="295" y="15" width="70" height="63"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="choix1Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QBE-K6-43v"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUJ-1g-Dyr">
+                                                <rect key="frame" x="295" y="80" width="70" height="63"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="choix2Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xbt-48-1eV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQb-1S-nie">
+                                                <rect key="frame" x="295" y="140" width="70" height="63"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="choix3Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="efd-wa-Wln"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4B0-Rr-V68">
+                                                <rect key="frame" x="295" y="207" width="70" height="63"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="choix4Action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9et-vC-zoY"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
@@ -310,6 +338,10 @@
                         <outlet property="balleDeFeu" destination="VqB-CS-u5L" id="tZj-yD-rSO"/>
                         <outlet property="boiteItem" destination="m9c-57-hRT" id="CBL-8K-o8f"/>
                         <outlet property="boutique" destination="jJj-Dc-gI9" id="sIg-vA-pa2"/>
+                        <outlet property="boutonChoix1" destination="sam-tL-RtC" id="Qgo-f7-gxh"/>
+                        <outlet property="boutonChoix2" destination="qUJ-1g-Dyr" id="IC2-SD-UlB"/>
+                        <outlet property="boutonChoix3" destination="DQb-1S-nie" id="8IK-pZ-qQR"/>
+                        <outlet property="boutonChoix4" destination="4B0-Rr-V68" id="Uzc-P0-hWP"/>
                         <outlet property="cage" destination="WOZ-zg-1dk" id="PK2-gw-2Vd"/>
                         <outlet property="canadien" destination="wGx-eJ-6gY" id="c16-2c-Ol7"/>
                         <outlet property="deco" destination="utX-RR-ceq" id="gJA-PE-LRv"/>
