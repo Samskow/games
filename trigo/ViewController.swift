@@ -26,7 +26,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
     
     //-------BOUTIQUE------------
-    @IBOutlet weak var balleDeGlace: UIView!
+   
     
     @IBOutlet weak var boiteItem: UIView!
     @IBOutlet weak var light1: UIImageView!
@@ -41,7 +41,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet weak var joueur: UIImageView!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var tirer: UIButton!
-    @IBOutlet weak var balle: UIView!
+    @IBOutlet weak var balle: UIImageView!
     //-------TABLEAU---------
     @IBOutlet weak var boutique: UITableView!
     
@@ -97,6 +97,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         object_bounce = Bounce(ball: balle, left_window: mur_gauche, right_window: mur_droite, top_window: mur_haut, bottom_window: mur_bas,defenseur3 : defenseur3, defenseur: defenseur)
         //---------------------
         balleDeFeu.loadGif(name: "fireball")
+        //balle.loadGif(name: "fireball")
+        balle.image = UIImage(named: "canadianPuck")
         tirer.isEnabled = false
         tirer.alpha = 0.5
         placerBall()
@@ -109,7 +111,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         deco.layer.cornerRadius = 20
         tirer.layer.cornerRadius = 50
         balle.layer.cornerRadius = 12.5
-        balleDeGlace.layer.cornerRadius = 25
+       
         //        balle.layer.borderColor = (UIColor(red: 0.5, green: 0.5, blue: 0, alpha: 1.0) as! CGColor)
         balle.layer.borderWidth = 3
         //----point du viseur--------

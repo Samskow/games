@@ -6,7 +6,7 @@ import Foundation
 //--------------------------------------------------
 class Bounce {
     //--------------------------------------------------
-    var b: UIView!
+    var b: UIImageView!
     var lw: UIView!
     var rw: UIView!
     var tw: UIView!
@@ -14,7 +14,7 @@ class Bounce {
     var def3 : UIView!
     var def : UIView!
     //--------------------------------------------------
-    init(ball b: UIView,
+    init(ball b: UIImageView!,
          left_window lw: UIView,
          right_window rw: UIView,
          top_window tw: UIView,
