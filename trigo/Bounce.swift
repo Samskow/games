@@ -11,17 +11,23 @@ class Bounce {
     var rw: UIView!
     var tw: UIView!
     var bw: UIView!
+    var def3 : UIView!
+    var def : UIView!
     //--------------------------------------------------
     init(ball b: UIView,
          left_window lw: UIView,
          right_window rw: UIView,
          top_window tw: UIView,
-         bottom_window bw: UIView) {
+         bottom_window bw: UIView,
+         defenseur3 def3 : UIView,
+         defenseur def : UIView) {
         self.b = b
         self.lw = lw
         self.rw = rw
         self.tw = tw
         self.bw = bw
+        self.def3 = def3
+        self.def = def
     }
     //--------------------------------------------------
     func returnCosSinAfterTouch(sin s: Double, cos c: Double) -> [Double] {
@@ -35,6 +41,12 @@ class Bounce {
         if b.frame.intersects(bw.frame) {
             let n = (d) * -1
             d=n }
+        if b.frame.intersects(def3.frame) {
+            let i = abs(d)
+            d = i }
+        if b.frame.intersects(def.frame) {
+            let u = abs(d)
+            d = u }
         return [__sinpi(Double(d/180.0)), __cospi(Double(d/180.0))]
     }
     //--------------------------------------------------

@@ -25,9 +25,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         return cell
     }
     
+    //-------BOUTIQUE------------
+    @IBOutlet weak var balleDeGlace: UIView!
     
-    
+    @IBOutlet weak var boiteItem: UIView!
+    @IBOutlet weak var light1: UIImageView!
+    @IBOutlet weak var light2: UIImageView!
     @IBOutlet weak var balleDeFeu: UIImageView!
+    
+    //--------------------
     @IBOutlet weak var goal: UILabel!
     @IBOutlet weak var arret: UILabel!
     //---
@@ -69,6 +75,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var tempsDeDeplacement: Double!
     var defenseTimer:Timer!
     
+    @IBOutlet weak var deco: UIView!
     //------------------------------------
     var degrees: Double!
     var cos: Double!
@@ -87,7 +94,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         super.viewDidLoad()
         goalarret()
         //------OBJECT---------
-        object_bounce = Bounce(ball: balle, left_window: mur_gauche, right_window: mur_droite, top_window: mur_haut, bottom_window: mur_bas)
+        object_bounce = Bounce(ball: balle, left_window: mur_gauche, right_window: mur_droite, top_window: mur_haut, bottom_window: mur_bas,defenseur3 : defenseur3, defenseur: defenseur)
         //---------------------
         balleDeFeu.loadGif(name: "fireball")
         tirer.isEnabled = false
@@ -98,8 +105,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         defendre()
         
         // Do any additional setup after loading the view, typically from a nib.
+        boiteItem.layer.cornerRadius = 15
+        deco.layer.cornerRadius = 20
         tirer.layer.cornerRadius = 50
         balle.layer.cornerRadius = 12.5
+        balleDeGlace.layer.cornerRadius = 25
         //        balle.layer.borderColor = (UIColor(red: 0.5, green: 0.5, blue: 0, alpha: 1.0) as! CGColor)
         balle.layer.borderWidth = 3
         //----point du viseur--------
@@ -116,18 +126,20 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    //-----ANIMATION GARDIEN et player
     func goalarret(){
-    UIView.animate(withDuration: 1, animations: {
-    
-        self.gardien.frame.size.width += 10
-        self.gardien.frame.size.height += 10
-    }) { _ in
-    UIView.animate(withDuration: 1, delay: 0.25, options: [.autoreverse, .repeat], animations: {
-        self.gardien.frame.origin.x -= 30
-    })
+        UIView.animate(withDuration: 1, animations: {
+            
+            self.gardien.frame.size.width += 10
+            self.gardien.frame.size.height += 10
+            
+        }) { _ in
+            UIView.animate(withDuration: 1, delay: 0.25, options: [.autoreverse, .repeat], animations: {
+                self.gardien.frame.origin.x -= 30
+            })
+        }
     }
-    }
+    //----------------------
     
     
     @IBAction func animateBall(_ sender: UIButton) {
@@ -144,7 +156,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         
     }
-    func doAnimation(){
+   @objc  func doAnimation(){
         //--- Desactivation  pour ne pas modifier la tracjectoire de la balle une fois lancer
         tirer.isEnabled = false
         tirer.alpha = 0.5
@@ -171,17 +183,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             slider.isEnabled = true
             slider.alpha = 1
             joueur.transform = CGAffineTransform(rotationAngle: 0);
+            
         }
         //------COLLISION----------------
         if balle.frame.intersects(defenseur3.frame){
-            print("--------")
+           
             arret.isHidden = false
             
-            doRebond()
-            aTimer.invalidate()
-            aTimer = nil
-            sleep(1)
-            placerBall()
+            
         }
         
         if balle.frame.intersects(cage.frame){ // ----SCORE++------------
@@ -196,6 +205,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             tirer.alpha = 1
             slider.isEnabled = true
             slider.alpha = 1
+            
+            light1.image = UIImage(named:"buzzerAllumé")
+            light2.image = UIImage(named:"buzzerAllumé")
+            
         }
         
         if balle.frame.intersects(gardien.frame){
@@ -204,11 +217,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             balle.center.y -= CGFloat(sinv)
             
             
+            
         }
     }
     
     //------------REBOND------------
-    func doRebond(){
+  @objc func doRebond(){
         print("rebonddd")
         balle.center.x += 20
         balle.center.y += 20
@@ -224,6 +238,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     func placerBall(){
         
+        light1.image = UIImage(named:"buzzer")
+        light2.image = UIImage(named:"buzzer")
         balle.center.x = UIScreen.main.bounds.width / 2
         balle.center.y = UIScreen.main.bounds.height / 2
         distance = 0
