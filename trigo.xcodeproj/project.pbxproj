@@ -19,6 +19,7 @@
 		7E71130C1FE0616700B9B9E7 /* canadianPuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E71130B1FE0616600B9B9E7 /* canadianPuck.png */; };
 		7E71130E1FE0638400B9B9E7 /* oilersPuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E71130D1FE0638300B9B9E7 /* oilersPuck.png */; };
 		7E7113101FE0659A00B9B9E7 /* torontomaplePuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E71130F1FE0659900B9B9E7 /* torontomaplePuck.png */; };
+		7E7113121FE07DF500B9B9E7 /* ballParDefaut.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7113111FE07DF300B9B9E7 /* ballParDefaut.png */; };
 		7E9CCF651FDF2B7A0000FC2D /* buzzerAllumé.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E9CCF641FDF2B780000FC2D /* buzzerAllumé.png */; };
 		7EB663541FD88B57000F6CCE /* gardien.png in Resources */ = {isa = PBXBuildFile; fileRef = 7EB663531FD88B56000F6CCE /* gardien.png */; };
 		7EB896E11FDB36DE00224000 /* Bounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB896E01FDB36DE00224000 /* Bounce.swift */; };
@@ -46,6 +47,7 @@
 		7E71130B1FE0616600B9B9E7 /* canadianPuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = canadianPuck.png; path = images/canadianPuck.png; sourceTree = "<group>"; };
 		7E71130D1FE0638300B9B9E7 /* oilersPuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = oilersPuck.png; path = images/oilersPuck.png; sourceTree = "<group>"; };
 		7E71130F1FE0659900B9B9E7 /* torontomaplePuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = torontomaplePuck.png; path = images/torontomaplePuck.png; sourceTree = "<group>"; };
+		7E7113111FE07DF300B9B9E7 /* ballParDefaut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ballParDefaut.png; path = images/ballParDefaut.png; sourceTree = "<group>"; };
 		7E9CCF641FDF2B780000FC2D /* buzzerAllumé.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "buzzerAllumé.png"; path = "images/buzzerAllumé.png"; sourceTree = "<group>"; };
 		7EB663531FD88B56000F6CCE /* gardien.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gardien.png; path = images/gardien.png; sourceTree = "<group>"; };
 		7EB896E01FDB36DE00224000 /* Bounce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bounce.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		9B5726881FBA3F4200EF2439 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7E7113111FE07DF300B9B9E7 /* ballParDefaut.png */,
 				7E71130F1FE0659900B9B9E7 /* torontomaplePuck.png */,
 				7E71130D1FE0638300B9B9E7 /* oilersPuck.png */,
 				7E71130B1FE0616600B9B9E7 /* canadianPuck.png */,
@@ -195,6 +198,7 @@
 				7E43223E1FD3F07200B101CE /* toit.png in Resources */,
 				7ECF1C3C1FD6FD1B005837B0 /* hockeyPlayer.png in Resources */,
 				9B57267C1FBA3EF100EF2439 /* Main.storyboard in Resources */,
+				7E7113121FE07DF500B9B9E7 /* ballParDefaut.png in Resources */,
 				7E0171A81FD9A8E50053F8FE /* fireball.gif in Resources */,
 				7E43223C1FD3EBC600B101CE /* cercle.png in Resources */,
 				7E0171AE1FD9C35D0053F8FE /* unlock.png in Resources */,

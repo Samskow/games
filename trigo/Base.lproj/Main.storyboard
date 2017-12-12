@@ -139,7 +139,7 @@
                                                 <rect key="frame" x="297" y="8" width="70" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OILERS 500 $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzv-4U-jZh">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OILERS 500 $" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzv-4U-jZh">
                                                 <rect key="frame" x="109" y="104" width="180" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -311,6 +311,7 @@
                         <outlet property="boiteItem" destination="m9c-57-hRT" id="CBL-8K-o8f"/>
                         <outlet property="boutique" destination="jJj-Dc-gI9" id="sIg-vA-pa2"/>
                         <outlet property="cage" destination="WOZ-zg-1dk" id="PK2-gw-2Vd"/>
+                        <outlet property="canadien" destination="wGx-eJ-6gY" id="c16-2c-Ol7"/>
                         <outlet property="deco" destination="utX-RR-ceq" id="gJA-PE-LRv"/>
                         <outlet property="defenseur" destination="LNf-oo-KWR" id="FgQ-Er-EEz"/>
                         <outlet property="defenseur2" destination="R3d-Zq-Nbt" id="aWN-KK-qJ2"/>
@@ -320,13 +321,19 @@
                         <outlet property="joueur" destination="RAC-jZ-GcN" id="lzY-JG-YI0"/>
                         <outlet property="light1" destination="fiF-eV-6MI" id="a4c-KS-l3f"/>
                         <outlet property="light2" destination="psW-BJ-YYL" id="UGt-jM-VOS"/>
+                        <outlet property="locketat1" destination="oN2-iN-yig" id="hOv-KG-jdx"/>
+                        <outlet property="locketat2" destination="hbb-tl-HcP" id="JPV-TC-5GB"/>
+                        <outlet property="locketat3" destination="qGP-z4-JKU" id="gqV-CU-Qdu"/>
+                        <outlet property="locketat4" destination="Wq5-He-icm" id="8XJ-CW-uqU"/>
                         <outlet property="mur_bas" destination="Zwg-Dd-lnV" id="UzQ-SU-0k6"/>
                         <outlet property="mur_droite" destination="jcY-qT-306" id="XES-D7-dWA"/>
                         <outlet property="mur_gauche" destination="Pgg-Ag-hba" id="9C5-Nv-SQw"/>
                         <outlet property="mur_haut" destination="Egj-3g-Fwe" id="XD1-DD-Hvm"/>
+                        <outlet property="oilers" destination="Su6-6C-W0u" id="Rvf-ZC-p2p"/>
                         <outlet property="scoreLabel" destination="Eut-My-E3Y" id="mic-pO-FCo"/>
                         <outlet property="slider" destination="yUY-cC-xA0" id="0of-Dp-ARC"/>
                         <outlet property="tirer" destination="Ney-jb-qC0" id="ei0-3Y-nrq"/>
+                        <outlet property="toronto" destination="pTs-Jd-PV7" id="El8-J2-chf"/>
                         <outlet property="viseur" destination="SB2-rT-hSJ" id="41c-P2-2eG"/>
                         <outlet property="viseur2" destination="6jz-1u-4vj" id="nDZ-7i-Hc6"/>
                         <outlet property="viseur3" destination="ecb-gn-Tng" id="8hR-Zm-CzK"/>

@@ -31,7 +31,26 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet weak var boiteItem: UIView!
     @IBOutlet weak var light1: UIImageView!
     @IBOutlet weak var light2: UIImageView!
+    
+    
+    //-----CADENAS--------
+    //---item1---
+    @IBOutlet weak var locketat1: UIImageView!
     @IBOutlet weak var balleDeFeu: UIImageView!
+    
+    //---item2---
+    @IBOutlet weak var locketat2: UIImageView!
+    
+    @IBOutlet weak var oilers: UIImageView!
+    //---item3---
+    @IBOutlet weak var locketat3: UIImageView!
+    @IBOutlet weak var canadien: UIImageView!
+    
+    //---item4---
+    @IBOutlet weak var locketat4: UIImageView!
+   
+    @IBOutlet weak var toronto: UIImageView!
+    
     
     //--------------------
     @IBOutlet weak var goal: UILabel!
@@ -94,8 +113,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet weak var mur_haut: UIView!
     @IBOutlet weak var mur_droite: UIView!
     @IBOutlet weak var mur_bas: UIView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        resetDesItems()
         goalarret()
         //------OBJECT---------
         object_bounce = Bounce(ball: balle, left_window: mur_gauche, right_window: mur_droite, top_window: mur_haut, bottom_window: mur_bas,defenseur3 : defenseur3, defenseur: defenseur,PoteauGauche: PoteauGauche,
@@ -103,7 +126,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //---------------------
         balleDeFeu.loadGif(name: "fireball")
         //balle.loadGif(name: "fireball")
-        balle.image = UIImage(named: "canadianPuck")
+        balle.image = UIImage(named: "ballParDefaut")
         tirer.isEnabled = false
         tirer.alpha = 0.5
         placerBall()
@@ -202,6 +225,28 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         if balle.frame.intersects(cage.frame){ // ----SCORE++------------
             score += 100
+            //------------UNLOCK--------
+            if score >= 100{
+                locketat4.image = UIImage(named: "unlock")
+                toronto.alpha = 1.0
+            }
+            if score >= 300{
+                locketat3.image = UIImage(named: "unlock")
+                canadien.alpha = 1.0
+            }
+            if score >= 500{
+                locketat2.image = UIImage(named: "unlock")
+                oilers.alpha = 1.0
+            }
+            if score >= 700{
+                locketat1.image = UIImage(named: "unlock")
+                balleDeFeu.alpha = 1.0
+            }
+            
+            //----------------------------
+            
+            
+            
             scoreLabel.text = "Score : \(score)"
             print("GOAL!!!!")
             goal.isHidden = false
@@ -353,9 +398,20 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     
     
-    //------------------COLLISION---------------------------
+    //------------------RESET DES ITEMS--------------------------
     
-    
+    func resetDesItems(){
+        locketat1.image = UIImage(named: "lock")
+        locketat2.image = UIImage(named: "lock")
+        locketat3.image = UIImage(named: "lock")
+        locketat4.image = UIImage(named: "lock")
+        
+        balleDeFeu.alpha = 0.5
+        oilers.alpha = 0.5
+        canadien.alpha = 0.5
+        toronto.alpha = 0.5
+        
+    }
     
     
     
