@@ -37,6 +37,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var boutonChoix4: UIButton!
     
     //---------------CADENAS-------------------
+
     //---item1---
     @IBOutlet weak var locketat1: UIImageView!
     @IBOutlet weak var balleDeFeu: UIImageView!
