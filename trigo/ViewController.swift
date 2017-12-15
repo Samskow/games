@@ -14,6 +14,13 @@ import ImageIO
 
 class ViewController: UIViewController {
     
+    enum UIViewAnimationCurve : Int {
+        case EaseInOut
+        case EaseIn
+        case EaseOut
+        case Linear
+    }
+    
     
     //-------BOUTIQUE------------
     
@@ -25,14 +32,11 @@ class ViewController: UIViewController {
     //--------BOUTON DE CHOIX D'ITEM ----------
     
     @IBOutlet weak var boutonChoix1: UIButton!
-    
     @IBOutlet weak var boutonChoix2: UIButton!
-    
     @IBOutlet weak var boutonChoix3: UIButton!
-    
     @IBOutlet weak var boutonChoix4: UIButton!
     
-    //-----CADENAS--------
+    //---------------CADENAS-------------------
     //---item1---
     @IBOutlet weak var locketat1: UIImageView!
     @IBOutlet weak var balleDeFeu: UIImageView!
@@ -47,10 +51,7 @@ class ViewController: UIViewController {
     
     //---item4---
     @IBOutlet weak var locketat4: UIImageView!
-    
     @IBOutlet weak var toronto: UIImageView!
-    
-    
     //--------------------
     @IBOutlet weak var goal: UILabel!
     //---
@@ -59,8 +60,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var tirer: UIButton!
     @IBOutlet weak var balle: UIImageView!
-    //-------TABLEAU---------
-    @IBOutlet weak var boutique: UITableView!
     
     //----------POTEAU DROIT--------------
     @IBOutlet weak var PoteauDroit: UIView!
@@ -89,14 +88,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var defenseur3: UIImageView!
     var originalDefenseurGauche2X: CGFloat!
     var originalDefenseurGauche2Y: CGFloat!
-    
     @IBOutlet weak var cliquez_pour_ajouter: UILabel!
-    
     var cosdef: Double!
     var sindef: Double!
     var tempsDeDeplacement: Double!
     var defenseTimer:Timer!
-    
     @IBOutlet weak var deco: UIView!
     //------------------------------------
     var degrees: Double!
@@ -107,7 +103,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     var score = 0
     var object_bounce: Bounce!
-    
+    //----------- MUR --------------------
     @IBOutlet weak var mur_gauche: UIView!
     @IBOutlet weak var mur_haut: UIView!
     @IBOutlet weak var mur_droite: UIView!
@@ -121,12 +117,13 @@ class ViewController: UIViewController {
         resetDesItems()
         balleDeFeu.loadGif(name: "fireball")
         goalarret()
-        //------OBJECT---------
+        
+        //------------------------ OBJECT  -------------------------------
         object_bounce = Bounce(ball: balle, left_window: mur_gauche, right_window: mur_droite, top_window: mur_haut, bottom_window: mur_bas,defenseur3 : defenseur3, defenseur: defenseur,PoteauGauche: PoteauGauche,
                                PoteauDroit: PoteauDroit)
-        //---------------------
+        //-----------------------------------------------------------------
         
-        balle.image = UIImage(named: "ballParDefaut")
+        balle.image = UIImage(named: "ballParDefaut")// mettre le palet par defaut
         tirer.isEnabled = false
         tirer.alpha = 0.5
         placerBall()
@@ -156,29 +153,32 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    //-----ANIMATION GARDIEN et player
+    //-----------------------  ANIMATION GARDIEN  ----------------------
     func goalarret(){
         UIView.animate(withDuration: 1, animations: {
             
-            self.gardien.frame.size.width += 10
+            self.gardien.frame.size.width += 10// augmentation de la taille du gardien au debut du jeu
             self.gardien.frame.size.height += 10
             
         }) { _ in
-            UIView.animate(withDuration: 1, delay: 0.25, options: [.autoreverse, .repeat], animations: {
-                self.gardien.frame.origin.x -= 30
+            UIView.animate(withDuration: 1, delay: 0.25, options: [.autoreverse, .repeat], animations: {// animation du gardien +- 40 px
+                self.gardien.frame.origin.x -= 40
+                
+                
             })
         }
     }
-    //----------------------
+    //-----------
     
     
     @IBAction func animateBall(_ sender: UIButton) {
         
         placerBall()
-        aTimer = Timer.scheduledTimer(timeInterval: 0.0025, target: self, selector: #selector(doAnimation), userInfo: nil, repeats: true)
+        aTimer = Timer.scheduledTimer(timeInterval: 0.0025, target: self, selector: #selector(doAnimation), userInfo: nil, repeats: true)// Timer
         
         
     }
+    //-----------
     
     @objc  func doAnimation(){
         //--- Desactivation  pour ne pas modifier la tracjectoire de la balle une fois lancer
@@ -188,6 +188,7 @@ class ViewController: UIViewController {
         slider.alpha = 0.5
         joueur.transform = CGAffineTransform(rotationAngle: -0.785398); //45 degree en radian par rapport à l'épaule droite du joueur
         //---
+        
         distance += 1
         balle.center.x += CGFloat(cosv)
         balle.center.y += CGFloat(sinv)
@@ -210,10 +211,6 @@ class ViewController: UIViewController {
             
         }
         //------COLLISION----------------
-        if balle.frame.intersects(defenseur3.frame){
-            
-            
-        }
         
         if balle.frame.intersects(cage.frame){ // ----SCORE++------------
             score += 100
@@ -222,7 +219,6 @@ class ViewController: UIViewController {
                 locketat4.image = UIImage(named: "unlock")
                 toronto.alpha = 1.0
                 cliquez_pour_ajouter.isHidden = false
-                
             }
             if score >= 300{
                 locketat3.image = UIImage(named: "unlock")
@@ -236,10 +232,7 @@ class ViewController: UIViewController {
                 locketat1.image = UIImage(named: "unlock")
                 balleDeFeu.alpha = 1.0
             }
-            
-            //----------------------------
-            
-            
+            //-----
             
             scoreLabel.text = "Score : \(score)"
             print("GOAL!!!!")
@@ -254,6 +247,8 @@ class ViewController: UIViewController {
             tirer.alpha = 1
             slider.isEnabled = true
             slider.alpha = 1
+            light1.image = UIImage(named:"buzzerAllumé")
+            light2.image = UIImage(named:"buzzerAllumé")
             
             //*************** ANIMATION SCORE ++ *****************
             
@@ -266,10 +261,6 @@ class ViewController: UIViewController {
                            animations: {
                             self.goal.transform = .identity
             }, completion: nil)
-            //****************************************************
-            
-            light1.image = UIImage(named:"buzzerAllumé")
-            light2.image = UIImage(named:"buzzerAllumé")
             
             //*************** ANIMATION BUZZER *****************
             light1.transform = CGAffineTransform(scaleX: 0, y: 0)
@@ -295,14 +286,9 @@ class ViewController: UIViewController {
         }
         
         if balle.frame.intersects(gardien.frame){
-           
             
             balle.center.x -= CGFloat(cosv)// pour que le gardien garde le palet
             balle.center.y -= CGFloat(sinv)
-            
-            
-            
-            
         }
     }
     
@@ -310,7 +296,7 @@ class ViewController: UIViewController {
     
     //-------------------BALL---------------
     
-    func placerBall(){
+    func placerBall(){//placement du palet au centre
         
         light1.image = UIImage(named:"buzzer")
         light2.image = UIImage(named:"buzzer")
@@ -353,11 +339,7 @@ class ViewController: UIViewController {
         originalvX = viseur.center.x
         originalvY = viseur.center.y
     }
-    //----------------------------------------
-    
-    
-    
-    
+ 
     
     //---------------DEFENSEUR---------------------------
     func defendre(){
@@ -447,9 +429,6 @@ class ViewController: UIViewController {
         }
     }
     
-    //===========================================================
-    //===========================================================
-    
     //------------------RESET DES ITEMS--------------------------
     
     func resetDesItems(){
@@ -464,12 +443,7 @@ class ViewController: UIViewController {
         toronto.alpha = 0.5
         
     }
-    enum UIViewAnimationCurve : Int {
-        case EaseInOut
-        case EaseIn
-        case EaseOut
-        case Linear
-    }
+    
     
     
     
