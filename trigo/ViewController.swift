@@ -10,23 +10,13 @@
 import UIKit
 import Foundation
 import ImageIO
-var arrayBonus = ["Boost X2        10💲":1,
-                  "FREEZE 5s       50💲":2,
-                  "SIZE BALL X2    100💲":3]
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayBonus.count
-    }
+
+class ViewController: UIViewController {
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = UITableViewCell(style:UITableViewCellStyle.default,reuseIdentifier:nil)
-        cell.textLabel?.text = [String](arrayBonus.keys)[indexPath.row]
-        return cell
-    }
     
     //-------BOUTIQUE------------
-   
+    
     
     @IBOutlet weak var boiteItem: UIView!
     @IBOutlet weak var light1: UIImageView!
@@ -57,13 +47,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     //---item4---
     @IBOutlet weak var locketat4: UIImageView!
-   
+    
     @IBOutlet weak var toronto: UIImageView!
     
     
     //--------------------
     @IBOutlet weak var goal: UILabel!
-    @IBOutlet weak var arret: UILabel!
     //---
     @IBOutlet weak var gardien: UIImageView!
     @IBOutlet weak var joueur: UIImageView!
@@ -101,6 +90,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var originalDefenseurGauche2X: CGFloat!
     var originalDefenseurGauche2Y: CGFloat!
     
+    @IBOutlet weak var cliquez_pour_ajouter: UILabel!
     
     var cosdef: Double!
     var sindef: Double!
@@ -127,14 +117,15 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        cliquez_pour_ajouter.isHidden = true
         resetDesItems()
+        balleDeFeu.loadGif(name: "fireball")
         goalarret()
         //------OBJECT---------
         object_bounce = Bounce(ball: balle, left_window: mur_gauche, right_window: mur_droite, top_window: mur_haut, bottom_window: mur_bas,defenseur3 : defenseur3, defenseur: defenseur,PoteauGauche: PoteauGauche,
                                PoteauDroit: PoteauDroit)
         //---------------------
-        balleDeFeu.loadGif(name: "fireball")
-        //balle.loadGif(name: "fireball")
+        
         balle.image = UIImage(named: "ballParDefaut")
         tirer.isEnabled = false
         tirer.alpha = 0.5
@@ -148,7 +139,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         deco.layer.cornerRadius = 20
         tirer.layer.cornerRadius = 50
         balle.layer.cornerRadius = 12.5
-       
+        
         //        balle.layer.borderColor = (UIColor(red: 0.5, green: 0.5, blue: 0, alpha: 1.0) as! CGColor)
         balle.layer.borderWidth = 3
         //----point du viseur--------
@@ -188,14 +179,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         
     }
-    @IBAction func rebond(_ sender: UIButton) {
-        
-        placerBall()
-        aTimer = Timer.scheduledTimer(timeInterval: 0.009, target: self, selector: #selector(doRebond), userInfo: nil, repeats: true)
-        
-        
-    }
-   @objc  func doAnimation(){
+    
+    @objc  func doAnimation(){
         //--- Desactivation  pour ne pas modifier la tracjectoire de la balle une fois lancer
         tirer.isEnabled = false
         tirer.alpha = 0.5
@@ -226,8 +211,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         }
         //------COLLISION----------------
         if balle.frame.intersects(defenseur3.frame){
-           
-            arret.isHidden = false
             
             
         }
@@ -238,7 +221,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             if score >= 100{
                 locketat4.image = UIImage(named: "unlock")
                 toronto.alpha = 1.0
-            
+                cliquez_pour_ajouter.isHidden = false
+                
             }
             if score >= 300{
                 locketat3.image = UIImage(named: "unlock")
@@ -260,6 +244,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             scoreLabel.text = "Score : \(score)"
             print("GOAL!!!!")
             goal.isHidden = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {// attente de 3 sec avant de faire disparaitre le label goal
+                self.goal.isHidden = true
+            }
             aTimer.invalidate()
             aTimer = nil
             placerBall()
@@ -268,33 +255,58 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             slider.isEnabled = true
             slider.alpha = 1
             
+            //*************** ANIMATION SCORE ++ *****************
+            
+            goal.transform = CGAffineTransform(scaleX: 0, y: 0)
+            UIView.animate(withDuration: 1.7,
+                           delay: 0.8,
+                           usingSpringWithDamping: 0.5,
+                           initialSpringVelocity: 0,
+                           options: .curveEaseInOut,
+                           animations: {
+                            self.goal.transform = .identity
+            }, completion: nil)
+            //****************************************************
+            
             light1.image = UIImage(named:"buzzerAllumé")
             light2.image = UIImage(named:"buzzerAllumé")
             
+            //*************** ANIMATION BUZZER *****************
+            light1.transform = CGAffineTransform(scaleX: 0, y: 0)
+            UIView.animate(withDuration: 1.7,
+                           delay: 0.8,
+                           usingSpringWithDamping: 0.5,
+                           initialSpringVelocity: 0,
+                           options: .curveEaseInOut,
+                           animations: {
+                            self.light1.transform = .identity
+            }, completion: nil)
+            
+            light2.transform = CGAffineTransform(scaleX: 0, y: 0)
+            UIView.animate(withDuration: 1.7,
+                           delay: 0.8,
+                           usingSpringWithDamping: 0.5,
+                           initialSpringVelocity: 0,
+                           options: .curveEaseInOut,
+                           animations: {
+                            self.light2.transform = .identity
+            }, completion: nil)
+            //****************************************************
         }
         
         if balle.frame.intersects(gardien.frame){
-            arret.isHidden = false
-            balle.center.x -= CGFloat(cosv)
+           
+            
+            balle.center.x -= CGFloat(cosv)// pour que le gardien garde le palet
             balle.center.y -= CGFloat(sinv)
+            
             
             
             
         }
     }
     
-    //------------REBOND------------
-  @objc func doRebond(){
-        print("rebonddd")
-        balle.center.x += 20
-        balle.center.y += 20
-        tirer.isEnabled = true
-        tirer.alpha = 1
-        slider.isEnabled = true
-        slider.alpha = 1
-        
-        
-    }
+    
     
     //-------------------BALL---------------
     
@@ -408,10 +420,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     //===========================================================
     //================= CHOIX ITEM ==============================
-
+    
     @IBAction func choix1Action(_ sender: UIButton) {
         if score >= 700 {
-            balle.image = UIImage(named: "fireball")
+            // balle.image = UIImage(named: "fireball")
+            //balleDeFeu.loadGif(name: "fireball")
+            balle.loadGif(name: "fireball")
         }
     }
     
@@ -433,10 +447,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         }
     }
     
-    
-    
-    
-    
     //===========================================================
     //===========================================================
     
@@ -453,6 +463,12 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         canadien.alpha = 0.5
         toronto.alpha = 0.5
         
+    }
+    enum UIViewAnimationCurve : Int {
+        case EaseInOut
+        case EaseIn
+        case EaseOut
+        case Linear
     }
     
     
